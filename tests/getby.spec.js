@@ -7,7 +7,7 @@ import{test,expect} from '@playwright/test'
 
 //test.describe.configure({mode:'parallel'});
 
-test('getby Getbylocators demo', async({page})=>{
+test('@getby Getbylocators demo', async({page})=>{
 
 await page.goto('https://rahulshettyacademy.com/angularpractice/');
 
@@ -70,7 +70,7 @@ expect(ord).toBeTruthy();
 
 //test 2 using getby locators 
 
-test('shettyacademy using getby', async({page})=>{
+test('@getby shettyacademy using getby', async({page})=>{
 
 await page.goto('https://rahulshettyacademy.com/client/#/auth/login');
 const username='bhakha@bhakha.com';
@@ -135,7 +135,7 @@ expect(ordidraw.includes(orderdetailpage)).toBeTruthy();
 
 ///CALENDAR TEST
 
-test('calendartest site', async({browser})=>{
+test('@getby calendartest site', async({browser})=>{
 
 const context= await browser.newContext();
 const page= await context.newPage();
