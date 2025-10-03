@@ -4,7 +4,7 @@ import{test,expect} from '@playwright/test'
 
 const occu='Doctor - Medical Intern'
 
-test.only('Tal quote', async({page})=>{
+test('Tal quote', async({page})=>{
 
 
 
