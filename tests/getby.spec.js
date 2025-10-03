@@ -225,6 +225,6 @@ await expect(page.locator('h2',{hasText:'Returning Customer'})).toBeVisible();
 await page.getByRole('textbox',{name:'E-Mail Address',exact:true}).fill('bhakha@bhakha.com');
 await page.getByRole('textbox',{name:'Password',exact:true}).fill('Bhai@1234');
 
-
+await page.getByRole('button',{name:'Login',exact:true}).click();
 
 });
