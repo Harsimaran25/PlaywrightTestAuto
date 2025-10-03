@@ -7,6 +7,8 @@ import{test,expect} from '@playwright/test'
 
 //test.describe.configure({mode:'parallel'});
 
+
+
 test('@getby Getbylocators demo', async({page})=>{
 
 await page.goto('https://rahulshettyacademy.com/angularpractice/');
@@ -203,5 +205,19 @@ console.log(greeting);
 
 
 
+
+});
+
+
+
+test.only('@getby naveenautomationtest', async({page})=>{
+
+await page.goto('https://naveenautomationlabs.com/opencart');
+
+await page.locator('title=My Account').click();
+await page.locator('.dropdown-menu-right').waitFor();
+await page.getByRole('link',{name:'Login' , exact:true}).click();
+
+await expect(page.locator('h2',{hasText:'Returning Customer'})).isVisible();
 
 });
