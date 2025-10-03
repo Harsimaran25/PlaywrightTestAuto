@@ -1,6 +1,6 @@
 import{test,expect,request} from '@playwright/test'   /*You're importing 3 
 important things from the Playwright testing library:*/
-const {APIutils}=require('../utils/APIutils')
+const {APIutils}=require('../Utils/APIutils')
 
 const loginPayload={    userEmail: "bhakha@bhakha.com", userPassword: "Bhai@1234"}
 
