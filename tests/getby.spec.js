@@ -214,10 +214,14 @@ test.only('@getby naveenautomationtest', async({page})=>{
 
 await page.goto('https://naveenautomationlabs.com/opencart');
 
-await page.locator('title=My Account').click();
+await page.locator('[title="My Account"]').click();
 await page.locator('.dropdown-menu-right').waitFor();
 await page.getByRole('link',{name:'Login' , exact:true}).click();
+const t= await page.locator('h2',{hasText:'Returning Customer'}).textContent();
+console.log(t)
+await expect(page.locator('h2',{hasText:'Returning Customer'})).toBeVisible();
 
-await expect(page.locator('h2',{hasText:'Returning Customer'})).isVisible();
+
+await 
 
 });

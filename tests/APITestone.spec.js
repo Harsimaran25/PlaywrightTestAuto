@@ -25,7 +25,7 @@ response= await apiutils.createOrderApi(orderpayload);
 
 
 //Test case start
-test.only('order search using api', async({page})=>{
+test('order search using api', async({page})=>{
 
    
 // lets insert token in local storage 
