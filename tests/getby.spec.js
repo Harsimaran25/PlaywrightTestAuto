@@ -212,6 +212,7 @@ console.log(greeting);
 
 test.only('@getby naveenautomationtest', async({page})=>{
 
+  const productname='Canon EOS 5D'
 await page.goto('https://naveenautomationlabs.com/opencart');
 
 await page.locator('[title="My Account"]').click();
@@ -226,5 +227,16 @@ await page.getByRole('textbox',{name:'E-Mail Address',exact:true}).fill('bhakha@
 await page.getByRole('textbox',{name:'Password',exact:true}).fill('Bhai@1234');
 
 await page.getByRole('button',{name:'Login',exact:true}).click();
+
+await page.getByRole('link', { name: 'naveenopencart' }).click();
+
+await page.locator('.product-thumb').first().textContent();
+await page.locator('.product-thumb').filter({hasText:productname}).
+getByRole('button',{name:'ADD TO CART'}).click();
+
+const p=await page.locator('h1').textContent();
+console.log(p);
+await expect(page.locator('h1')).toContainText('Canon EOS 5D');
+
 
 });
