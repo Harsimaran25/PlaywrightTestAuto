@@ -234,8 +234,8 @@ await page.locator('.product-thumb').first().textContent();
 await page.locator('.product-thumb').filter({hasText:productname}).
 getByRole('button',{name:'ADD TO CART'}).click();
 
-const p=await page.locator('h1').textContent();
-console.log(p);
+// const p=await page.locator('h1').textContent();
+// console.log(p);
 await expect(page.locator('h1')).toContainText('Canon EOS 5D');
 
 
