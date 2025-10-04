@@ -210,7 +210,7 @@ console.log(greeting);
 
 
 
-test.only('@getby naveenautomationtest', async({page})=>{
+test('@getby naveenautomationtest', async({page})=>{
 
   const productname='Canon EOS 5D'
 await page.goto('https://naveenautomationlabs.com/opencart');

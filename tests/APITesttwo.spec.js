@@ -1,8 +1,8 @@
 // test case fot API rahulsheety practice site
 
 
-import{test,expect} from '@playwright/test'
-import { request } from 'http';
+import{test,expect,request} from '@playwright/test'
+
 
 let apiContext;
 
@@ -10,14 +10,14 @@ const loginPayload={
     userEmail: "bhakha@bhakha.com", userPassword: "Bhai@1234"
 }; 
 
-test.beforeAll('apisetup', async()=>{
+test.only('apisetup', async()=>{
 
   apiContext= await request.newContext();
 
   const response= await apiContext.post('https://rahulshettyacademy.com/api/ecom/auth/login',{
     
     data:loginPayload,
-    Headers:{
+    headers:{
 'Content-Type':'application/json'
 
     }
@@ -25,6 +25,7 @@ test.beforeAll('apisetup', async()=>{
 })
 
   expect(response.status()).toBe(200);
-
+     const responsebody= await response.json();
+     console.log(responsebody);
 
 })
