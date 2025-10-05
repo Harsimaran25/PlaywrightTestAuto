@@ -72,10 +72,18 @@ export default customTest;
     // ...
 // }
 
+// return type is use as below 
+// function getAdminUser(): User {
+  //...
+  //}
+
+
+
+
 
 //the typescript equivalent for above is below: customdata is 
 
-// interface testData :{
+// interface TestData :{
 
 //      userName : string;
 //  passWord :string;
@@ -84,4 +92,17 @@ export default customTest;
 //  cardName: string;
 //  Cvv: number;
 //  Country: string
+// };
+
+// const customTest = base.extend <{testData : TestData}>({
+//       testData:{
+//  userName : "bhakha@bhakha.com",
+//  passWord :"Bhai@1234",
+//  productName:"iphone 13 pro" ,
+//  cardNo:"3566002020360505",
+//  cardName:"Bhakha",
+//  Cvv:"165",
+//  Country:"Cuba"
+
 // }
+//})
