@@ -2,6 +2,9 @@
     "default": {
         "formatOptions": {
             "snippetInterface": "asynchronous"
-        }
+        },
+         
+    "timeout": 30000,   
+    "publishQuiet": true
     }
 }

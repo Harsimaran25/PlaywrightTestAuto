@@ -9,7 +9,7 @@ const { Given, When, Then } = require('@cucumber/cucumber');
 const { Page } = require("playwright");
 const { chromium, expect } = require("@playwright/test");
 
-let page, browser,ordidraw,ordid; //global scope here 
+let page, browser,ordidraw,ordid,productname; //global scope here 
 Given('user logs to site with {string} and {string}', async function (username, password) {
            // Write code here that turns the phrase above into concrete actions
 // but the page or browser this stepdefinition  does not know  so we 
@@ -24,7 +24,7 @@ browser = await chromium.launch({ headless: false });
     await page.getByRole('button', { name: 'Login' }).click();
 
 await page.locator('.card-body b').first().textContent();//just used to let this load 
-
+console.log('in given');
 
           
          });
@@ -33,6 +33,8 @@ await page.locator('.card-body b').first().textContent();//just used to let this
 When('user adds product {string} to cart', async function (product) {
            // Write code here that turns the phrase above into concrete actions
         //get product and add to cart using filter
+        console.log('in when')
+        productname=product;
         await page.locator('.card-body').filter({hasText:product}).getByRole('button',{name:'Add to Cart'}).click();
          });
 
