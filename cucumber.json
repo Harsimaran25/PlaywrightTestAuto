@@ -3,7 +3,7 @@
 
            "require": [
       "features/step_definitions/*.js",
-      "features/step_definitions/Hooks/hooks.js"
+      "features/step_definitions/support/hooks.js"
     ],
         "formatOptions": {
             "snippetInterface": "asynchronous"

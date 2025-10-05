@@ -6,6 +6,7 @@ const { chromium } = require("@playwright/test");
 
 /**By storing browser and page on this, you make them accessible in step definitions */
 let page, browser
+//the path for the hooks is set in cucumber.json file 
 Before( async function () {
 
  console.log('Launching browser before scenario...');
