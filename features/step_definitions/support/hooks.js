@@ -5,7 +5,7 @@ const { Page } = require("playwright");
 const { chromium } = require("@playwright/test");
 
 /**By storing browser and page on this, you make them accessible in step definitions */
-let page, browser
+
 //the path for the hooks is set in cucumber.json file 
 Before( async function () {
 
@@ -35,7 +35,7 @@ The result object contains the status and outcome of the step that just ran.
 This is provided by Cucumber.js (not Playwright) and is passed to the AfterStep hook automatically. 
 key properties of result: status , duration and exception*/
 
-AfterStep( async function ({result} , scenario) {
+AfterStep( async function ({result}) {
   // This hook will be executed after all steps, and take a screenshot on step failure
   if (result.status === Status.FAILED) {
    const screenshot = await this.page.screenshot({ path: `CucumberScreenshots/${Date.now()}-failed.png`, fullPage: true });
