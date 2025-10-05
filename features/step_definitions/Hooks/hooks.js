@@ -1,8 +1,8 @@
 /**Hooks are used for setup and teardown the environment before and after each scenario */
 
-const { Before,After} = require('@cucumber/cucumber');
+const { Before,After,AfterStep,Status} = require('@cucumber/cucumber');
 const { Page } = require("playwright");
-const { chromium, expect } = require("@playwright/test");
+const { chromium } = require("@playwright/test");
 
 /**By storing browser and page on this, you make them accessible in step definitions */
 let page, browser
@@ -28,4 +28,12 @@ After( async function () {
    if (this.browser) {
     await this.browser.close();
   } 
+});
+
+
+AfterStep( async function ({result} , scenario) {
+  // This hook will be executed after all steps, and take a screenshot on step failure
+  if (result.status === Status.FAILED) {
+   const screenshot = await this.page.screenshot({ path: `CucumberScreenshots/${Date.now()}-failed.png`, fullPage: true });
+  }
 });
