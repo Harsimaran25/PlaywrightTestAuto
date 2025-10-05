@@ -16,3 +16,9 @@ constructor(page)
 }
 
 }
+
+module.exports ={LoginPage}; 
+
+
+// OR 
+// export default LoginPage;
