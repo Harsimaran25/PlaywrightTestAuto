@@ -10,8 +10,8 @@ constructor(page)
 {
     this.page=page;
     this.userName= page.getByPlaceholder('email@example.com');
-    this.passWord=
-    this.loginBtn=
+    this.passWord= page.getByPlaceholder('enter your passsword');
+    this.loginBtn=page.getByRole('button', { name: 'Login' });
 
 }
 
