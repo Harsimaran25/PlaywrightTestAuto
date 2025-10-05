@@ -3,7 +3,7 @@ const assert = require("assert");
 const { Given, When, Then } = require("@cucumber/cucumber");
 const { Page } = require("playwright");
 const { chromium, expect } = require("@playwright/test");
-
+// to run directly -- > npx cucumber-js features/Error.feature -- exit
 Given(
   "user logs with {string} and password as {string} to site",
   async function (username, password) {
