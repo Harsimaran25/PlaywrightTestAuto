@@ -29,7 +29,10 @@ After( async function () {
     await this.browser.close();
   } 
 });
-
+/**What is result?
+The result object contains the status and outcome of the step that just ran. 
+This is provided by Cucumber.js (not Playwright) and is passed to the AfterStep hook automatically. 
+key properties of result: status , duration and exception*/
 
 AfterStep( async function ({result} , scenario) {
   // This hook will be executed after all steps, and take a screenshot on step failure
