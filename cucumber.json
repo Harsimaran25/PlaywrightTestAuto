@@ -1,5 +1,10 @@
 {
     "default": {
+
+           "require": [
+      "features/step_definitions/*.js",
+      "features/step_definitions/Hooks/hooks.js"
+    ],
         "formatOptions": {
             "snippetInterface": "asynchronous"
         },
