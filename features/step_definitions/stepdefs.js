@@ -6,34 +6,85 @@
 
 const assert = require('assert');
 const { Given, When, Then } = require('@cucumber/cucumber');
-const {}
+const { Page } = require("playwright");
+const { chromium, expect } = require("@playwright/test");
 
+let page, browser; //global scope here 
 Given('user logs to site with {userName} and {passWord}', async function (username, password) {
            // Write code here that turns the phrase above into concrete actions
-// but the page or browser this stepdefinition  does not know 
+// but the page or browser this stepdefinition  does not know  so we 
+browser = await chromium.launch({ headless: false });
 
+    const context = await browser.newContext();
+
+    page = await context.newPage();
 
     await page.getByPlaceholder('email@example.com').fill(username);
     await page.getByPlaceholder('enter your passsword').fill(password);
     await page.getByRole('button', { name: 'Login' }).click();
+
+await page.locator('.card-body b').first().textContent();//just used to let this load 
 
 
           
          });
 
 
-When('user adds product {product} to cart', function (product) {
+When('user adds product {product} to cart', async function (product) {
            // Write code here that turns the phrase above into concrete actions
-           return 'pending';
+        //get product and add to cart using filter
+        await page.locator('.card-body').filter({hasText:product}).getByRole('button',{name:'Add to Cart'}).click();
          });
 
- Then('verify product is added to the cart', function () {
+ Then('verify product is added to the cart', async function () {
            // Write code here that turns the phrase above into concrete actions
-           return 'pending';
+
+           await page.getByRole('listitem').getByRole('button',{name:'Cart'}).click();
+
+        await page.locator('div.cartSection').first().waitFor(); // just to make sure all is loaded and synced
+
+        await expect(page.getByText(productname)).toBeVisible(); 
+        await page.getByRole('button',{name:'Checkout'}).click();
+
+    await page.waitForLoadState('networkidle');
+    await page.getByPlaceholder('Select Country').pressSequentially('Ind');
+    await page.getByRole('Button',{name: /\s*India$/}).click();
+
+    await page.getByText('PLACE ORDER').click();
+
+    //await expect(page.getByRole('heading',{name:'Thankyou for the order.'})).toBeVisible();  OR
+
+    await expect(page.getByText('Thankyou for the order.')).toBeVisible();
+    const ordidraw=await page.locator('label.ng-star-inserted').textContent();
+    console.log(ordidraw);
+    const ordid= ordidraw.replace(/^\s*\|\s*|\s*\|\s*$/g, '').trim();
+    console.log(ordid);
+            
          });
 
 
-         Then('product is present in orderhistory page', function () {
+         Then('product is present in orderhistory page', async function () {
            // Write code here that turns the phrase above into concrete actions
-           return 'pending';
+           await page.locator('label[routerlink*="myorders"]').click();
+
+await expect(page.getByRole('heading',{name:'Your Orders'})).toBeVisible();
+//const p= await page.getByRole('rowheader')
+
+const ordrows=await page.locator('tr.ng-star-inserted').count();
+console.log(ordrows);
+for(let i=0;i<ordrows;i++)
+    {
+      let k= await page.locator('tr.ng-star-inserted').nth(i).locator('th').textContent();
+      if(ordidraw.includes(k)){
+       await page.locator('tr.ng-star-inserted').nth(i).locator('button').first().click();
+   break;
+      }
+
+    }
+
+    await expect(page.locator('.email-title')).toContainText(' order summary ');
+const orderdetailpage= await page.locator('.col-text').textContent();
+expect(ordidraw.includes(orderdetailpage)).toBeTruthy();
+
+
            });

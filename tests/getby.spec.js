@@ -112,6 +112,8 @@ const ordidraw=await page.locator('label.ng-star-inserted').textContent();
 console.log(ordidraw);
 const ordid= ordidraw.replace(/^\s*\|\s*|\s*\|\s*$/g, '').trim();
 console.log(ordid);
+
+
 await page.locator('label[routerlink*="myorders"]').click();
 
 await expect(page.getByRole('heading',{name:'Your Orders'})).toBeVisible();
