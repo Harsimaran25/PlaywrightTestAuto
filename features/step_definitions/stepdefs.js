@@ -9,8 +9,8 @@ const { Given, When, Then } = require('@cucumber/cucumber');
 const { Page } = require("playwright");
 const { chromium, expect } = require("@playwright/test");
 
-let page, browser; //global scope here 
-Given('user logs to site with {userName} and {passWord}', async function (username, password) {
+let page, browser,ordidraw,ordid; //global scope here 
+Given('user logs to site with {string} and {string}', async function (username, password) {
            // Write code here that turns the phrase above into concrete actions
 // but the page or browser this stepdefinition  does not know  so we 
 browser = await chromium.launch({ headless: false });
@@ -18,7 +18,7 @@ browser = await chromium.launch({ headless: false });
     const context = await browser.newContext();
 
     page = await context.newPage();
-
+    await page.goto('https://rahulshettyacademy.com/client/#/auth/login');
     await page.getByPlaceholder('email@example.com').fill(username);
     await page.getByPlaceholder('enter your passsword').fill(password);
     await page.getByRole('button', { name: 'Login' }).click();
@@ -30,7 +30,7 @@ await page.locator('.card-body b').first().textContent();//just used to let this
          });
 
 
-When('user adds product {product} to cart', async function (product) {
+When('user adds product {string} to cart', async function (product) {
            // Write code here that turns the phrase above into concrete actions
         //get product and add to cart using filter
         await page.locator('.card-body').filter({hasText:product}).getByRole('button',{name:'Add to Cart'}).click();
@@ -55,9 +55,9 @@ When('user adds product {product} to cart', async function (product) {
     //await expect(page.getByRole('heading',{name:'Thankyou for the order.'})).toBeVisible();  OR
 
     await expect(page.getByText('Thankyou for the order.')).toBeVisible();
-    const ordidraw=await page.locator('label.ng-star-inserted').textContent();
+    ordidraw=await page.locator('label.ng-star-inserted').textContent();
     console.log(ordidraw);
-    const ordid= ordidraw.replace(/^\s*\|\s*|\s*\|\s*$/g, '').trim();
+     ordid= ordidraw.replace(/^\s*\|\s*|\s*\|\s*$/g, '').trim();
     console.log(ordid);
             
          });
