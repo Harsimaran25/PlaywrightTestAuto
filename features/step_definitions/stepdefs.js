@@ -24,7 +24,8 @@ browser = await chromium.launch({ headless: false });
       await page.goto('https://rahulshettyacademy.com/client/#/auth/login', {
         waitUntil: 'networkidle'
     });
-
+// Wait and fill credentials
+    await page.waitForSelector('[placeholder="email@example.com"]');
     await page.getByPlaceholder('email@example.com').fill(username);
     await page.getByPlaceholder('enter your passsword').fill(password);
     await page.getByRole('button', { name: 'Login' }).click();
@@ -97,5 +98,5 @@ for(let i=0;i<ordrows;i++)
 const orderdetailpage= await page.locator('.col-text').textContent();
 expect(ordidraw.includes(orderdetailpage)).toBeTruthy();
 console.log('finished test')
-
+await browser.close()
            });
