@@ -10,7 +10,7 @@ const { Page } = require("playwright");
 const { chromium, expect } = require("@playwright/test");
 
 let page, browser,ordidraw,ordid,productname; //global scope here 
-Given('user logs to site with {string} and {string}', async function (username, password) {
+Given('user logs to site with {string} and {string}',{ timeout: 60000 }, async function (username, password) {
            // Write code here that turns the phrase above into concrete actions
 // but the page or browser this stepdefinition  does not know  so we 
 browser = await chromium.launch({ headless: false });
@@ -18,12 +18,18 @@ browser = await chromium.launch({ headless: false });
     const context = await browser.newContext();
 
     page = await context.newPage();
-    await page.goto('https://rahulshettyacademy.com/client/#/auth/login');
+    // await page.goto('https://rahulshettyacademy.com/client/#/auth/login');
+    // await page.waitForLoadState('networkidle');
+
+      await page.goto('https://rahulshettyacademy.com/client/#/auth/login', {
+        waitUntil: 'networkidle'
+    });
+
     await page.getByPlaceholder('email@example.com').fill(username);
     await page.getByPlaceholder('enter your passsword').fill(password);
     await page.getByRole('button', { name: 'Login' }).click();
-
-await page.locator('.card-body b').first().textContent();//just used to let this load 
+   
+//just used to let this load 
 console.log('in given');
 
           
@@ -33,6 +39,7 @@ console.log('in given');
 When('user adds product {string} to cart', async function (product) {
            // Write code here that turns the phrase above into concrete actions
         //get product and add to cart using filter
+        await page.locator('.card-body b').first().textContent();
         console.log('in when')
         productname=product;
         await page.locator('.card-body').filter({hasText:product}).getByRole('button',{name:'Add to Cart'}).click();
@@ -40,7 +47,7 @@ When('user adds product {string} to cart', async function (product) {
 
  Then('verify product is added to the cart', async function () {
            // Write code here that turns the phrase above into concrete actions
-
+    console.log('in Then')
            await page.getByRole('listitem').getByRole('button',{name:'Cart'}).click();
 
         await page.locator('div.cartSection').first().waitFor(); // just to make sure all is loaded and synced
@@ -67,6 +74,8 @@ When('user adds product {string} to cart', async function (product) {
 
          Then('product is present in orderhistory page', async function () {
            // Write code here that turns the phrase above into concrete actions
+
+           console.log('in then 73 line no')
            await page.locator('label[routerlink*="myorders"]').click();
 
 await expect(page.getByRole('heading',{name:'Your Orders'})).toBeVisible();
@@ -77,7 +86,7 @@ console.log(ordrows);
 for(let i=0;i<ordrows;i++)
     {
       let k= await page.locator('tr.ng-star-inserted').nth(i).locator('th').textContent();
-      if(ordidraw.includes(k)){
+      if(ordidraw.includes(ordid)){
        await page.locator('tr.ng-star-inserted').nth(i).locator('button').first().click();
    break;
       }
@@ -87,6 +96,6 @@ for(let i=0;i<ordrows;i++)
     await expect(page.locator('.email-title')).toContainText(' order summary ');
 const orderdetailpage= await page.locator('.col-text').textContent();
 expect(ordidraw.includes(orderdetailpage)).toBeTruthy();
-
+console.log('finished test')
 
            });
