@@ -50,7 +50,7 @@ export default customTest;
 
 
 
-
+// for TYPESCRIPT
 //using interface declartion  for example
 
 // interface User {
