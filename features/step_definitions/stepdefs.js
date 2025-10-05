@@ -53,7 +53,7 @@ When('user adds product {string} to cart', async function (product) {
 
         await this.page.locator('div.cartSection').first().waitFor(); // just to make sure all is loaded and synced
 
-        await expect(page.getByText(productname)).toBeVisible(); 
+        await expect(this.page.getByText(productname)).toBeVisible(); 
         await this.page.getByRole('button',{name:'Checkout'}).click();
 
     await this.page.waitForLoadState('networkidle');
@@ -79,15 +79,15 @@ When('user adds product {string} to cart', async function (product) {
            console.log('in then 73 line no')
            await this.page.locator('label[routerlink*="myorders"]').click();
 
-await expect(page.getByRole('heading',{name:'Your Orders'})).toBeVisible();
+await expect(this.page.getByRole('heading',{name:'Your Orders'})).toBeVisible();
 //const p= await page.getByRole('rowheader')
 
-const ordrows=await page.locator('tr.ng-star-inserted').count();
+const ordrows=await this.page.locator('tr.ng-star-inserted').count();
 console.log(ordrows);
 for(let i=0;i<ordrows;i++)
     {
       let k= await this.page.locator('tr.ng-star-inserted').nth(i).locator('th').textContent();
-      if(ordidraw.includes(ordid)){
+      if(ordidraw.includes(k)){
        await this.page.locator('tr.ng-star-inserted').nth(i).locator('button').first().click();
    break;
       }
