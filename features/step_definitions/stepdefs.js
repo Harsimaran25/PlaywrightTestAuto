@@ -15,9 +15,9 @@ Given('user logs to site with {string} and {string}',{ timeout: 60000 }, async f
 // but the page or browser this stepdefinition  does not know  so we 
 browser = await chromium.launch({ headless: false });
 
-    const context = await browser.newContext();
+const context = await browser.newContext();
 
-    page = await context.newPage();
+page = await context.newPage();
     // await page.goto('https://rahulshettyacademy.com/client/#/auth/login');
     // await page.waitForLoadState('networkidle');
 
@@ -98,5 +98,6 @@ for(let i=0;i<ordrows;i++)
 const orderdetailpage= await page.locator('.col-text').textContent();
 expect(ordidraw.includes(orderdetailpage)).toBeTruthy();
 console.log('finished test')
-await browser.close()
+await browser.close(); 
+//or use command in CLI npx cucumber-js --exit
            });
