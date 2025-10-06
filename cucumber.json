@@ -5,10 +5,10 @@
       "features/step_definitions/support/hooks.js"
     ],
     "formatOptions": {
-      "snippetInterface": "async"
+      "snippetInterface": "async -await"
     },
     "format": [
-      ["html:cucumber-report.html"],
+      ["html", "cucumber-report.html"],
       "summary",
       "progress-bar",
       "json:./cucumber-report.json"

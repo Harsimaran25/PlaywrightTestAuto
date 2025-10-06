@@ -8,14 +8,15 @@
     "test:all": "npx playwright test",
     "regressionreport": "npx playwright test --grep @getby --reporter=line,allure-playwright",
     "Cucumbertests": "npx cucumber-js",
-    "withTags" :"npx cucumber-js  --tags @ErrorCheck"
+    "withTags": "npx cucumber-js  --tags @ErrorCheck"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@playwright/test": "^1.55.1",
-    "@types/node": "^24.6.2"
+    "@types/node": "^24.6.2",
+    "cucumber-html-reporter": "^7.2.0"
   },
   "dependencies": {
     "@cucumber/cucumber": "^12.2.0",

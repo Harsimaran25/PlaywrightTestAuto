@@ -5,6 +5,165 @@
       {
         "description": "",
         "id": "error-message;to-validate-error-message",
+        "keyword": "Scenario",
+        "line": 7,
+        "name": "To validate error message",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 517053399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 8,
+            "name": "user logs with \"rahulshetty\" and password as \"Bhakha1234\" to site",
+            "match": {
+              "location": "features\\step_definitions\\ErrorStepdef.js:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1571084199
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "Error message is displayed",
+            "match": {
+              "location": "features\\step_definitions\\ErrorStepdef.js:30"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2417294899
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 310189300
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@ErrorCheck",
+            "line": 5
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "error-message",
+    "line": 3,
+    "keyword": "Feature",
+    "name": "Error message",
+    "tags": [],
+    "uri": "features\\Error.feature"
+  },
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "login-to-rahulshetty;verify-product-ordering-using-getbylocator",
+        "keyword": "Scenario",
+        "line": 4,
+        "name": "Verify product ordering using getbylocator",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 454510099
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "user logs to site with \"bhakha@bhakha.com\" and \"Bhai@1234\"",
+            "match": {
+              "location": "features\\step_definitions\\stepdefs.js:13"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4615773799
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "user adds product \"ZARA COAT 3\" to cart",
+            "match": {
+              "location": "features\\step_definitions\\stepdefs.js:41"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1465496500
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 7,
+            "name": "verify product is added to the cart",
+            "match": {
+              "location": "features\\step_definitions\\stepdefs.js:54"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3151781599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "product is present in orderhistory page",
+            "match": {
+              "location": "features\\step_definitions\\stepdefs.js:82"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1129113499
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 423308699
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "login-to-rahulshetty",
+    "line": 2,
+    "keyword": "Feature",
+    "name": "Login to Rahulshetty",
+    "tags": [],
+    "uri": "features\\Login.feature"
+  },
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "error-message;to-validate-error-message",
         "keyword": "Scenario Outline",
         "line": 16,
         "name": "To validate error message",
@@ -14,7 +173,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 395341000
+              "duration": 466399200
             }
           },
           {
@@ -27,7 +186,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1244749700
+              "duration": 1790206799
             }
           },
           {
@@ -40,7 +199,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 2419568698
+              "duration": 2425963398
             }
           },
           {
@@ -48,7 +207,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 311864700
+              "duration": 272604299
             }
           }
         ],
@@ -67,7 +226,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 427455299
+              "duration": 406776800
             }
           },
           {
@@ -80,7 +239,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1304117298
+              "duration": 1877272100
             }
           },
           {
@@ -93,7 +252,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 2425591999
+              "duration": 2421080099
             }
           },
           {
@@ -101,7 +260,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 402374799
+              "duration": 446930200
             }
           }
         ],
