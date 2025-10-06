@@ -7,7 +7,8 @@
     "regression": "npx playwright test --grep @getby",
     "test:all": "npx playwright test",
     "regressionreport": "npx playwright test --grep @getby --reporter=line,allure-playwright",
-    "Cucumbertests": "npx cucumber-js"
+    "Cucumbertests": "npx cucumber-js",
+    "withTags" :"npx cucumber-js  --tags @ErrorCheck"
   },
   "keywords": [],
   "author": "",

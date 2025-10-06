@@ -40,3 +40,17 @@ AfterStep(async function ({ result }) {
     });
   }
 });
+
+//example of tagged hooks
+// Before({tags :"@ErrorCheck"},async function () {
+//   console.log("Launching browser before scenario...");
+
+//   // Create and store browser/page in the Cucumber World (`this`)
+//   this.browser = await chromium.launch({ headless: false });
+
+//   const context = await this.browser.newContext();
+
+//   this.page = await context.newPage();
+
+//   //return page;
+// });
