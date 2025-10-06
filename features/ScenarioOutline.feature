@@ -3,6 +3,7 @@
 # to run scenarios in parallel u can use cLI command -- > npx cucumber-js features/abc.feature --parallel 2 --exit
 # number 2 means run 2 scenarios in parallel we can give any number like parallel 10 to run 10 scenarios parallely
 # but we CANNOT run feature files parallel that means we cannot run 2 or more feature files parallel that is limitation with cucumber
+# to generate reports --> npx cucumber-js features/ScenarioOutline.feature -- format html:cucumber-report.html
 
 Feature: Error message
 

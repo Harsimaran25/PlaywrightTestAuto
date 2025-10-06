@@ -1,0 +1,119 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "error-message;to-validate-error-message",
+        "keyword": "Scenario Outline",
+        "line": 16,
+        "name": "To validate error message",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 395341000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 12,
+            "name": "user logs with \"shetty\" and  \"Bhakha2\" to site",
+            "match": {
+              "location": "features\\step_definitions\\Scenariooutline.js:6"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1244749700
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 13,
+            "name": "Error message is displayed for invalid login",
+            "match": {
+              "location": "features\\step_definitions\\Scenariooutline.js:22"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2419568698
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 311864700
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "error-message;to-validate-error-message",
+        "keyword": "Scenario Outline",
+        "line": 17,
+        "name": "To validate error message",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 427455299
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 12,
+            "name": "user logs with \"learning\" and  \"magha\" to site",
+            "match": {
+              "location": "features\\step_definitions\\Scenariooutline.js:6"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1304117298
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 13,
+            "name": "Error message is displayed for invalid login",
+            "match": {
+              "location": "features\\step_definitions\\Scenariooutline.js:22"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2425591999
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 402374799
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "error-message",
+    "line": 8,
+    "keyword": "Feature",
+    "name": "Error message",
+    "tags": [],
+    "uri": "features\\ScenarioOutline.feature"
+  }
+]

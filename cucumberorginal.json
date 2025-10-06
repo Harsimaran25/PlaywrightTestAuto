@@ -5,14 +5,9 @@
       "features/step_definitions/support/hooks.js"
     ],
     "formatOptions": {
-      "snippetInterface": "async"
+      "snippetInterface": "asynchronous"
     },
-    "format": [
-      ["html:cucumber-report.html"],
-      "summary",
-      "progress-bar",
-      "json:./cucumber-report.json"
-    ],
+
     "timeout": 60000,
     "publishQuiet": true
   }
