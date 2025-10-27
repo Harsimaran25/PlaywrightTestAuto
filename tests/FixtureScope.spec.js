@@ -11,7 +11,8 @@ const customFixtureScope = base.extend({
       counter++;
       await use(counter);
     },
-    { scope: "worker" },
+    // { scope: "worker" }, // we could change it to scope test which is by default
+    { scope: "test" },
   ],
 });
 
@@ -28,3 +29,4 @@ customFixtureScope("test 2 with worker scope", async ({ counterFixture }) => {
 customFixtureScope("test 3 with worker scope", async ({ counterFixture }) => {
   console.log(`Test 1 counter ${counter}`);
 });
+//run using npx playwright test FixtureScope.spec.js --workers=1
