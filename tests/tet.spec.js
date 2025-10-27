@@ -1,15 +1,70 @@
-//Assignment Task: Playwright 101
+require("dotenv").config();
+const { chromium } = require("playwright");
+const { expect } = require("expect");
+const cp = require("child_process");
+const playwrightClientVersion = cp
+  .execSync("npx playwright --version")
+  .toString()
+  .trim()
+  .split(" ")[1];
 
-//Test Scenario 1:
+(async () => {
+  console.log("Starting Playwright test...");
+  console.log("Playwright version:", playwrightClientVersion);
 
-import { test, expect, chromium } from "@playwright/test";
+  const capabilities =[ {
+    browserName: "Chrome", 
+    // Browsers allowed: `Chrome`, `MicrosoftEdge`, `pw-chromium`, `pw-firefox` and `pw-webkit`
+    browserVersion: "latest",
+    "LT:Options": {
+      platform: "Windows 10",
+      build: "Playwright Single Build",
+      name: "Playwright Sample Test",
+      user: process.env.LT_USERNAME,
+      accessKey: process.env.LT_ACCESS_KEY,
+      network: true,
+      video: true,
+      console: true,
+      tunnel: false, // Add tunnel configuration if testing locally hosted webpage
+      tunnelName: "", // Optional
+      geoLocation: "", // country code can be fetched from https://www.lambdatest.com/capabilities-generator/
+      playwrightClientVersion: playwrightClientVersion,
+    },
+  },
+  {
+    browserName: "MicrosoftEdge", 
+    // Browsers allowed: `Chrome`, `MicrosoftEdge`, `pw-chromium`, `pw-firefox` and `pw-webkit`
+    browserVersion: "latest",
+    "LT:Options": {
+      platform: "Windows 10",
+      build: "Playwright Single Build",
+      name: "Playwright Sample Test",
+      user: process.env.LT_USERNAME,
+      accessKey: process.env.LT_ACCESS_KEY,
+      network: true,
+      video: true,
+      console: true,
+      tunnel: false, // Add tunnel configuration if testing locally hosted webpage
+      tunnelName: "", // Optional
+      geoLocation: "", // country code can be fetched from https://www.lambdatest.com/capabilities-generator/
+      playwrightClientVersion: playwrightClientVersion,
+    },
+  },
+];
 
-test.describe.configure({ mode: "parallel" });
-test("Test scenario 1", async ({ browser }) => {
-  const browserTest = await chromium.launch({ headless: false });
-  const TestContext = await browserTest.newContext();
+  async function runtest(capability)  {
+  
+  const browserInstance = await chromium.connect({
+    wsEndpoint: `wss://cdp.lambdatest.com/playwright?capabilities=${encodeURIComponent(JSON.stringify(capability))}`
+  })
 
-  const page = await TestContext.newPage();
+  console.log(`Connected successfully for ${testName}!`);
+  console.log(`Creating new page for ${testName}...`);
+
+  //const page = await browser.newPage();
+
+
+test("Test scenario 1", async ({ page }) => {
 
   await page.goto("https://www.lambdatest.com/selenium-playground");
 
@@ -40,11 +95,10 @@ test("Test scenario 1", async ({ browser }) => {
   await browser.close();
 });
 
-test("Test Scenario 2", async ({}) => {
-  const browserTest = await chromium.launch({ headless: false });
-  const TestContext = await browserTest.newContext();
+test("Test Scenario 2", async ({page}) => {
 
-  const page = await TestContext.newPage();
+
+  
   await page.goto("https://www.lambdatest.com/selenium-playground");
 
   const dragDrop = page.getByRole("link", {
@@ -101,14 +155,11 @@ test("Test Scenario 2", async ({}) => {
 
   // Validate final slider value
   await expect(page.locator("#rangeSuccess")).toHaveText("95");
-  await browser.close();
+  
 });
 
-test("Test Scenario 3", async ({}) => {
-  const browserTest = await chromium.launch({ headless: false });
-  const TestContext = await browserTest.newContext();
-
-  const page = await TestContext.newPage();
+test("Test Scenario 3", async ({page}) => {
+ 
 
   await page.goto("https://www.lambdatest.com/selenium-playground");
 
@@ -175,3 +226,15 @@ test("Test Scenario 3", async ({}) => {
     "Thanks for contacting us, we will get back to you shortly."
   );
 });
+
+  }
+  
+  
+
+async function teardown(page, browser) {
+  console.log("Cleaning up resources...");
+  await page.close();
+  await browser.close();
+  console.log("Test completed and resources cleaned up!");
+};
+}
