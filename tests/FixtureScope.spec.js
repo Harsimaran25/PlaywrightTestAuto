@@ -30,3 +30,9 @@ customFixtureScope("test 3 with worker scope", async ({ counterFixture }) => {
   console.log(`Test 1 counter ${counter}`);
 });
 //run using npx playwright test FixtureScope.spec.js --workers=1
+
+/**Playwright provides a variety of built-in fixtures that are optimized for common testing tasks.
+ *  Here's a quick rundown. Page and browser fixtures. Page is for interacting with webpages,
+ * while browser handles the browser instance. Context and request fixtures. Context manages isolated sessions,
+ * and requests is great for API testing without a browser. Advance fixtures, trace captures detailed test traces,
+ *  and artifacts handle screenshots, videos, and more. */
