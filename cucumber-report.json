@@ -14,7 +14,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 472426799
+              "duration": 527333600
             }
           },
           {
@@ -22,7 +22,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 550095100
+              "duration": 534160499
             }
           },
           {
@@ -31,11 +31,11 @@
             "line": 4,
             "name": "the user is on the login Page",
             "match": {
-              "location": "features\\step_definitions\\BinaryLoginNewStep.ts:9"
+              "location": "features\\step_definitions\\BinaryLoginStepwithPom.ts:9"
             },
             "result": {
               "status": "passed",
-              "duration": 1892670299
+              "duration": 1808193299
             }
           },
           {
@@ -44,11 +44,11 @@
             "line": 5,
             "name": "user enters a valid email and password",
             "match": {
-              "location": "features\\step_definitions\\BinaryLoginNewStep.ts:15"
+              "location": "features\\step_definitions\\BinaryLoginStepwithPom.ts:16"
             },
             "result": {
               "status": "passed",
-              "duration": 434680298
+              "duration": 353215098
             }
           },
           {
@@ -57,11 +57,11 @@
             "line": 6,
             "name": "the user should see their email and password in the url",
             "match": {
-              "location": "features\\step_definitions\\BinaryLoginNewStep.ts:26"
+              "location": "features\\step_definitions\\BinaryLoginStepwithPom.ts:27"
             },
             "result": {
               "status": "passed",
-              "duration": 4824999
+              "duration": 3543499
             }
           },
           {
@@ -69,7 +69,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 289617000
+              "duration": 284689300
             }
           },
           {
@@ -77,7 +77,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 225331199
+              "duration": 267748200
             }
           }
         ],

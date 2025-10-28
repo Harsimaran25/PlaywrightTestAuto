@@ -2,7 +2,7 @@
 
 import { Locator,Page } from "playwright";
 
-class login2{
+export class login2{
 
     readonly page: Page;
     readonly emailLocator:Locator;
@@ -18,5 +18,10 @@ class login2{
             
             this.signInBtn = page.getByRole("button", { name: "Sign in", exact: true });
        
+    }
+
+    async goto(){
+
+   await this.page.goto("https://binaryville.com/account");
     }
 }
