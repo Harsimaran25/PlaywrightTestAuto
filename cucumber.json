@@ -2,7 +2,9 @@
   "default": {
     "require": [
       "features/step_definitions/*.js",
-      "features/step_definitions/support/hooks.js"
+      "features/step_definitions/*.ts",
+      "features/step_definitions/support/hooks.js",
+      "features/step_definitions/support/hooks.ts"
     ],
     "formatOptions": {
       "snippetInterface": "async -await"
