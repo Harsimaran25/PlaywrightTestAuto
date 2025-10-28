@@ -4,7 +4,10 @@
 import { PomFixture,expect } from "../PageObj/Fixtures";
 
 
-
+/**Business logic, like decision based on user roles belongs in your test cases. Keep your 
+ * POM focused purely on the mechanics of interacting with the page. Next, avoid adding complex
+ *  logic to your POM. The POM should stay simple and handle direct actions. Complex logic like 
+ * loops and conditions belongs in task cases where the context is clearer.  */
 
 
 
