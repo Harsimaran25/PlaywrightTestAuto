@@ -6,6 +6,7 @@
       "features/step_definitions/support/hooks.js",
       "features/step_definitions/support/hooks.ts"
     ],
+    "requireModule": ["ts-node/register"],
     "formatOptions": {
       "snippetInterface": "async -await"
     },

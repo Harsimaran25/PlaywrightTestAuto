@@ -4,138 +4,56 @@
     "elements": [
       {
         "description": "",
-        "id": "error-message;to-validate-error-message",
+        "id": "user-login-to-binaryville;successful-login-with-valid-credentials",
         "keyword": "Scenario",
-        "line": 7,
-        "name": "To validate error message",
+        "line": 3,
+        "name": "Successful Login with Valid Credentials",
         "steps": [
           {
             "keyword": "Before",
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 517053399
+              "duration": 484510899
             }
           },
           {
             "arguments": [],
             "keyword": "Given ",
-            "line": 8,
-            "name": "user logs with \"rahulshetty\" and password as \"Bhakha1234\" to site",
+            "line": 4,
+            "name": "the user is on the login Page",
             "match": {
-              "location": "features\\step_definitions\\ErrorStepdef.js:7"
+              "location": "features\\step_definitions\\BinaryLoginStep.ts:23"
             },
             "result": {
               "status": "passed",
-              "duration": 1571084199
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 9,
-            "name": "Error message is displayed",
-            "match": {
-              "location": "features\\step_definitions\\ErrorStepdef.js:30"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 2417294899
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 310189300
-            }
-          }
-        ],
-        "tags": [
-          {
-            "name": "@ErrorCheck",
-            "line": 5
-          }
-        ],
-        "type": "scenario"
-      }
-    ],
-    "id": "error-message",
-    "line": 3,
-    "keyword": "Feature",
-    "name": "Error message",
-    "tags": [],
-    "uri": "features\\Error.feature"
-  },
-  {
-    "description": "",
-    "elements": [
-      {
-        "description": "",
-        "id": "login-to-rahulshetty;verify-product-ordering-using-getbylocator",
-        "keyword": "Scenario",
-        "line": 4,
-        "name": "Verify product ordering using getbylocator",
-        "steps": [
-          {
-            "keyword": "Before",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 454510099
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Given ",
-            "line": 5,
-            "name": "user logs to site with \"bhakha@bhakha.com\" and \"Bhai@1234\"",
-            "match": {
-              "location": "features\\step_definitions\\stepdefs.js:13"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 4615773799
+              "duration": 1872728499
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
+            "line": 5,
+            "name": "user enters a valid email and password",
+            "match": {
+              "location": "features\\step_definitions\\BinaryLoginStep.ts:29"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 425509700
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
             "line": 6,
-            "name": "user adds product \"ZARA COAT 3\" to cart",
+            "name": "the user should see their email and password in the url",
             "match": {
-              "location": "features\\step_definitions\\stepdefs.js:41"
+              "location": "features\\step_definitions\\BinaryLoginStep.ts:40"
             },
             "result": {
               "status": "passed",
-              "duration": 1465496500
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 7,
-            "name": "verify product is added to the cart",
-            "match": {
-              "location": "features\\step_definitions\\stepdefs.js:54"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 3151781599
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 8,
-            "name": "product is present in orderhistory page",
-            "match": {
-              "location": "features\\step_definitions\\stepdefs.js:82"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 1129113499
+              "duration": 3712700
             }
           },
           {
@@ -143,7 +61,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 423308699
+              "duration": 358518600
             }
           }
         ],
@@ -151,128 +69,11 @@
         "type": "scenario"
       }
     ],
-    "id": "login-to-rahulshetty",
-    "line": 2,
+    "id": "user-login-to-binaryville",
+    "line": 1,
     "keyword": "Feature",
-    "name": "Login to Rahulshetty",
+    "name": "User login to Binaryville",
     "tags": [],
-    "uri": "features\\Login.feature"
-  },
-  {
-    "description": "",
-    "elements": [
-      {
-        "description": "",
-        "id": "error-message;to-validate-error-message",
-        "keyword": "Scenario Outline",
-        "line": 16,
-        "name": "To validate error message",
-        "steps": [
-          {
-            "keyword": "Before",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 466399200
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Given ",
-            "line": 12,
-            "name": "user logs with \"shetty\" and  \"Bhakha2\" to site",
-            "match": {
-              "location": "features\\step_definitions\\Scenariooutline.js:6"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 1790206799
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 13,
-            "name": "Error message is displayed for invalid login",
-            "match": {
-              "location": "features\\step_definitions\\Scenariooutline.js:22"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 2425963398
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 272604299
-            }
-          }
-        ],
-        "tags": [],
-        "type": "scenario"
-      },
-      {
-        "description": "",
-        "id": "error-message;to-validate-error-message",
-        "keyword": "Scenario Outline",
-        "line": 17,
-        "name": "To validate error message",
-        "steps": [
-          {
-            "keyword": "Before",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 406776800
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Given ",
-            "line": 12,
-            "name": "user logs with \"learning\" and  \"magha\" to site",
-            "match": {
-              "location": "features\\step_definitions\\Scenariooutline.js:6"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 1877272100
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 13,
-            "name": "Error message is displayed for invalid login",
-            "match": {
-              "location": "features\\step_definitions\\Scenariooutline.js:22"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 2421080099
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 446930200
-            }
-          }
-        ],
-        "tags": [],
-        "type": "scenario"
-      }
-    ],
-    "id": "error-message",
-    "line": 8,
-    "keyword": "Feature",
-    "name": "Error message",
-    "tags": [],
-    "uri": "features\\ScenarioOutline.feature"
+    "uri": "features\\BinaryLogin.feature"
   }
 ]
