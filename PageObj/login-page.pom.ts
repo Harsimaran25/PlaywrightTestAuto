@@ -16,6 +16,15 @@ export class binaryvilleLogin{
     }
 
 
+
+    async login2Binary(email:string,password:string) {
+
+await this.emailLocator.fill(email);
+
+await this.passWordLocator.fill(password);
+await this.signInBtn.click();
+
+    }
 }
 
 
