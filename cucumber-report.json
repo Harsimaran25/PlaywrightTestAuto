@@ -14,7 +14,15 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 484510899
+              "duration": 472426799
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 550095100
             }
           },
           {
@@ -23,11 +31,11 @@
             "line": 4,
             "name": "the user is on the login Page",
             "match": {
-              "location": "features\\step_definitions\\BinaryLoginStep.ts:23"
+              "location": "features\\step_definitions\\BinaryLoginNewStep.ts:9"
             },
             "result": {
               "status": "passed",
-              "duration": 1872728499
+              "duration": 1892670299
             }
           },
           {
@@ -36,11 +44,11 @@
             "line": 5,
             "name": "user enters a valid email and password",
             "match": {
-              "location": "features\\step_definitions\\BinaryLoginStep.ts:29"
+              "location": "features\\step_definitions\\BinaryLoginNewStep.ts:15"
             },
             "result": {
               "status": "passed",
-              "duration": 425509700
+              "duration": 434680298
             }
           },
           {
@@ -49,11 +57,11 @@
             "line": 6,
             "name": "the user should see their email and password in the url",
             "match": {
-              "location": "features\\step_definitions\\BinaryLoginStep.ts:40"
+              "location": "features\\step_definitions\\BinaryLoginNewStep.ts:26"
             },
             "result": {
               "status": "passed",
-              "duration": 3712700
+              "duration": 4824999
             }
           },
           {
@@ -61,7 +69,15 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 358518600
+              "duration": 289617000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 225331199
             }
           }
         ],
